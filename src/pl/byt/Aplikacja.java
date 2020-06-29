@@ -8,9 +8,11 @@ public class Aplikacja {
     private String status;
 
     private Kandydat kandydat;
+    private RekrutacjaMediator rekrutacjaMediator;
 
-    public Aplikacja(Kandydat kandydat) {
+    public Aplikacja(Kandydat kandydat, RekrutacjaMediator rekrutacjaMediator) {
         setKandydat(kandydat);
+        setRekrutacjaMediator(rekrutacjaMediator);
     }
 
     public void setKandydat(Kandydat kandydat) {
@@ -20,5 +22,14 @@ public class Aplikacja {
 
         this.kandydat = kandydat;
         kandydat.addAplikacja(this);
+    }
+
+    public void setRekrutacjaMediator(RekrutacjaMediator rekrutacjaMediator) {
+        if (this.rekrutacjaMediator != null && this.rekrutacjaMediator != rekrutacjaMediator) {
+            rekrutacjaMediator.removeAplikacja(this);
+        }
+
+        this.rekrutacjaMediator = rekrutacjaMediator;
+        rekrutacjaMediator.addAplikacja(this);
     }
 }
