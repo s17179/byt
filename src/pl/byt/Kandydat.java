@@ -14,6 +14,8 @@ public class Kandydat {
     private List<CV> cvs = new ArrayList<>();
     public static Set<CV> allCVs = new HashSet<>();
 
+    private List<Aplikacja> aplikacjas = new ArrayList<>();
+
     public void addCV(CV cv) throws Exception {
         if (!cvs.contains(cv)) {
             if (allCVs.contains(cv)) {
@@ -22,6 +24,17 @@ public class Kandydat {
             cvs.add(cv);
             allCVs.add(cv);
         }
+    }
+
+    public void addAplikacja(Aplikacja aplikacja) {
+        if (!aplikacjas.contains(aplikacja)) {
+            aplikacjas.add(aplikacja);
+            aplikacja.setKandydat(this);
+        }
+    }
+
+    public void removeAplikacja(Aplikacja aplikacja) {
+        aplikacjas.remove(aplikacja);
     }
 
     public static void usun() {
