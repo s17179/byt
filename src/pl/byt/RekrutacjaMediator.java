@@ -10,9 +10,16 @@ public class RekrutacjaMediator {
 
     private List<EtapRekrutacji> etapRekrutacjis = new ArrayList<>();
 
-    public RekrutacjaMediator(Aplikacja initialAplikacja, EtapRekrutacji initialEtapRekrutacji) {
+    private Rekrutacja rekrutacja;
+
+    public RekrutacjaMediator(
+            Aplikacja initialAplikacja,
+            EtapRekrutacji initialEtapRekrutacji,
+            Rekrutacja rekrutacja
+    ) {
         addAplikacja(initialAplikacja);
         addEtapRekrutacji(initialEtapRekrutacji);
+        setRekrutacja(rekrutacja);
     }
 
     public void addAplikacja(Aplikacja aplikacja) {
@@ -46,6 +53,15 @@ public class RekrutacjaMediator {
 
     public void removeEtapRekrutacji(EtapRekrutacji etapRekrutacji) {
         etapRekrutacjis.remove(etapRekrutacji);
+    }
+
+    public void setRekrutacja(Rekrutacja rekrutacja) {
+        if (this.rekrutacja != null && this.rekrutacja != rekrutacja) {
+            rekrutacja.removeRekrutacjaMediator(this);
+        }
+
+        this.rekrutacja = rekrutacja;
+        rekrutacja.setRekrutacjaMediator(this);
     }
 
     public void akceptujKandydata() {
