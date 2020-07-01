@@ -13,20 +13,40 @@ public class Rekrutacja {
 
     private RekrutacjaMediator rekrutacjaMediator;
 
-    private Rekrutacja(RekrutacjaMediator rekrutacjaMediator, String initialWymaganie) {
+    private Rekruter rekruter;
+
+    private Rekrutacja(
+            RekrutacjaMediator rekrutacjaMediator,
+            String initialWymaganie,
+            Rekruter rekruter
+    ) {
         this.rekrutacjaMediator = rekrutacjaMediator;
+        this.rekruter = rekruter;
         wymagania.add(initialWymaganie);
     }
 
-    public static Rekrutacja createRekrutacja(RekrutacjaMediator rekrutacjaMediator, String initialWymagania) throws Exception {
+    public static Rekrutacja createRekrutacja(
+            RekrutacjaMediator rekrutacjaMediator,
+            String initialWymagania,
+            Rekruter rekruter
+    ) throws Exception {
         if (rekrutacjaMediator == null) {
             throw new Exception("Given rekrutacjaMediator cannot be null");
         }
 
-        Rekrutacja rekrutacja = new Rekrutacja(rekrutacjaMediator, initialWymagania);
+        Rekrutacja rekrutacja = new Rekrutacja(rekrutacjaMediator, initialWymagania, rekruter);
 
         rekrutacjaMediator.setRekrutacja(rekrutacja);
 
         return rekrutacja;
+    }
+
+    public void setRekruter(Rekruter rekruter) {
+        if (this.rekruter != null && this.rekruter != rekruter) {
+            rekruter.removeRekrutacja(this);
+        }
+
+        this.rekruter = rekruter;
+        rekruter.addRekrutacja(this);
     }
 }
