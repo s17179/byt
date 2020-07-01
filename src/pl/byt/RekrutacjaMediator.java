@@ -11,9 +11,10 @@ public class RekrutacjaMediator {
     private List<Ocena> ocenas = new ArrayList<>();
 
     private List<EtapRekrutacji> etapRekrutacjis = new ArrayList<>();
-    private static Set<EtapRekrutacji> allEtapRekrutacjis = new HashSet<>();
+    public static Set<EtapRekrutacji> allEtapRekrutacjis = new HashSet<>();
 
     private Rekrutacja rekrutacja;
+    public static Set<Rekrutacja> allRekrutacjas = new HashSet<>();
 
     public RekrutacjaMediator(
             Aplikacja initialAplikacja,
@@ -58,17 +59,17 @@ public class RekrutacjaMediator {
         }
     }
 
-    public void removeEtapRekrutacji(EtapRekrutacji etapRekrutacji) {
-        etapRekrutacjis.remove(etapRekrutacji);
-    }
+    public void setRekrutacja(Rekrutacja rekrutacja) throws Exception {
+        if (allRekrutacjas.contains(rekrutacja)) {
+            throw new Exception("Given rekrutacja is already connected with a RekrutacjaMediator");
+        }
 
-    public void setRekrutacja(Rekrutacja rekrutacja) {
-        if (this.rekrutacja != null && this.rekrutacja != rekrutacja) {
-            rekrutacja.removeRekrutacjaMediator(this);
+        if (this.rekrutacja != null) {
+            allRekrutacjas.remove(this.rekrutacja);
         }
 
         this.rekrutacja = rekrutacja;
-        rekrutacja.setRekrutacjaMediator(this);
+        allRekrutacjas.add(rekrutacja);
     }
 
     public void akceptujKandydata() {
