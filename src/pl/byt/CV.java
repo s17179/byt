@@ -20,7 +20,7 @@ public class CV {
 
         CV cv = new CV(kandydat);
 
-        kandydat.addCV(cv);
+        kandydat.setCV(cv);
 
         return cv;
     }

@@ -11,19 +11,18 @@ public class Kandydat {
     private String nazwisko;
     private String pesel;
 
-    private List<CV> cvs = new ArrayList<>();
+    private CV cv;
     public static Set<CV> allCVs = new HashSet<>();
 
     private List<Aplikacja> aplikacjas = new ArrayList<>();
 
-    public void addCV(CV cv) throws Exception {
-        if (!cvs.contains(cv)) {
-            if (allCVs.contains(cv)) {
-                throw new Exception("Given CV is already connected with a Kandydat");
-            }
-            cvs.add(cv);
-            allCVs.add(cv);
+    public void setCV(CV cv) throws Exception {
+        if (allCVs.contains(cv)) {
+            throw new Exception("Given CV is already connected with a Kandydat");
         }
+
+        this.cv = cv;
+        allCVs.add(cv);
     }
 
     public void addAplikacja(Aplikacja aplikacja) {
