@@ -1,8 +1,6 @@
 package pl.byt;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class Rekrutacja {
     private Date dataRozpoczecia;
@@ -14,6 +12,9 @@ public class Rekrutacja {
     private RekrutacjaMediator rekrutacjaMediator;
 
     private Rekruter rekruter;
+
+    private TestKompetencji testKompetencji;
+    public static Set<TestKompetencji> allTestKompetencjis = new HashSet<>();
 
     private Rekrutacja(
             RekrutacjaMediator rekrutacjaMediator,
@@ -48,5 +49,18 @@ public class Rekrutacja {
 
         this.rekruter = rekruter;
         rekruter.addRekrutacja(this);
+    }
+
+    public void setTestKompetencji(TestKompetencji testKompetencji) throws Exception {
+        if (allTestKompetencjis.contains(testKompetencji)) {
+            throw new Exception("Given testKompetencji is already connected with a Rekrutacja");
+        }
+
+        if (this.testKompetencji != null) {
+            allTestKompetencjis.remove(this.testKompetencji);
+        }
+
+        this.testKompetencji = testKompetencji;
+        allTestKompetencjis.add(testKompetencji);
     }
 }
