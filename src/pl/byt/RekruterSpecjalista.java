@@ -3,7 +3,7 @@ package pl.byt;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RekruterSpecjalista {
+public class RekruterSpecjalista extends PracownikHR {
     private String specjalizacja;
 
     private List<EtapRekrutacji> etapRekrutacjis = new ArrayList<>();

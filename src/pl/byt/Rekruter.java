@@ -3,7 +3,7 @@ package pl.byt;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rekruter {
+public class Rekruter extends PracownikHR {
     private List<Rekrutacja> rekrutacjas = new ArrayList<>();
 
     public void removeRekrutacja(Rekrutacja rekrutacja) {
