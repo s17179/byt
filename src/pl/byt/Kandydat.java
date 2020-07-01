@@ -64,7 +64,11 @@ public class Kandydat {
         return pesel;
     }
 
-    public CV getCv() {
+    public CV getCv() throws Exception {
+        if (cv == null) {
+            throw new Exception("CV is not set");
+        }
+
         return cv;
     }
 
