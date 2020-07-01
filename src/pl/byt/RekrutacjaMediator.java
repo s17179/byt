@@ -103,4 +103,20 @@ public class RekrutacjaMediator {
     public static void utworzRekrutacje() {
 
     }
+
+    public List<Aplikacja> getAplikacjas() {
+        return aplikacjas;
+    }
+
+    public List<Ocena> getOcenas() {
+        return ocenas;
+    }
+
+    public List<EtapRekrutacji> getEtapRekrutacjis() {
+        return etapRekrutacjis;
+    }
+
+    public Rekrutacja getRekrutacja() {
+        return rekrutacja;
+    }
 }

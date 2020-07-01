@@ -32,4 +32,24 @@ public class Aplikacja {
         this.rekrutacjaMediator = rekrutacjaMediator;
         rekrutacjaMediator.addAplikacja(this);
     }
+
+    public Date getDataRozpoczecia() {
+        return dataRozpoczecia;
+    }
+
+    public Date getDataZakonczenia() {
+        return dataZakonczenia;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public Kandydat getKandydat() {
+        return kandydat;
+    }
+
+    public RekrutacjaMediator getRekrutacjaMediator() {
+        return rekrutacjaMediator;
+    }
 }

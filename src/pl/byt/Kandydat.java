@@ -47,4 +47,28 @@ public class Kandydat {
     public void wyswietlProfil() {
 
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getImie() {
+        return imie;
+    }
+
+    public String getNazwisko() {
+        return nazwisko;
+    }
+
+    public String getPesel() {
+        return pesel;
+    }
+
+    public CV getCv() {
+        return cv;
+    }
+
+    public List<Aplikacja> getAplikacjas() {
+        return aplikacjas;
+    }
 }

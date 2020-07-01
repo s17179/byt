@@ -18,4 +18,16 @@ public class Ocena {
         this.rekrutacjaMediator = rekrutacjaMediator;
         rekrutacjaMediator.addOcena(this);
     }
+
+    public String getNotatka() {
+        return notatka;
+    }
+
+    public int getWartosc() {
+        return wartosc;
+    }
+
+    public RekrutacjaMediator getRekrutacjaMediator() {
+        return rekrutacjaMediator;
+    }
 }

@@ -44,4 +44,20 @@ public class TestKompetencji {
             allPytanies.add(pytanie);
         }
     }
+
+    public int getMinimalnaIloscPoprawnychOdpowiedzi() {
+        return minimalnaIloscPoprawnychOdpowiedzi;
+    }
+
+    public String getNazwa() {
+        return nazwa;
+    }
+
+    public Rekrutacja getRekrutacja() {
+        return rekrutacja;
+    }
+
+    public List<Pytanie> getPytanies() {
+        return pytanies;
+    }
 }

@@ -63,4 +63,36 @@ public class Rekrutacja {
         this.testKompetencji = testKompetencji;
         allTestKompetencjis.add(testKompetencji);
     }
+
+    public Date getDataRozpoczecia() {
+        return dataRozpoczecia;
+    }
+
+    public Date getDataZakonczenia() {
+        return dataZakonczenia;
+    }
+
+    public String getOpis() {
+        return opis;
+    }
+
+    public String getStanowisko() {
+        return stanowisko;
+    }
+
+    public List<String> getWymagania() {
+        return wymagania;
+    }
+
+    public RekrutacjaMediator getRekrutacjaMediator() {
+        return rekrutacjaMediator;
+    }
+
+    public Rekruter getRekruter() {
+        return rekruter;
+    }
+
+    public TestKompetencji getTestKompetencji() {
+        return testKompetencji;
+    }
 }

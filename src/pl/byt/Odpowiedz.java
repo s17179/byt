@@ -33,4 +33,8 @@ public class Odpowiedz {
     public Pytanie getPytanie() {
         return pytanie;
     }
+
+    public boolean isCzyPoprawna() {
+        return czyPoprawna;
+    }
 }

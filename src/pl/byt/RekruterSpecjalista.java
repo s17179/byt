@@ -18,4 +18,12 @@ public class RekruterSpecjalista extends PracownikHR {
     public void removeEtapRekrutacji(EtapRekrutacji etapRekrutacji) {
         etapRekrutacjis.remove(etapRekrutacji);
     }
+
+    public String getSpecjalizacja() {
+        return specjalizacja;
+    }
+
+    public List<EtapRekrutacji> getEtapRekrutacjis() {
+        return etapRekrutacjis;
+    }
 }

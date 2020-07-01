@@ -24,4 +24,16 @@ public class CV {
 
         return cv;
     }
+
+    public Set<String> getWyodrebnioneDane() {
+        return wyodrebnioneDane;
+    }
+
+    public String getZdjecie() {
+        return zdjecie;
+    }
+
+    public Kandydat getKandydat() {
+        return kandydat;
+    }
 }

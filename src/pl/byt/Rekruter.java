@@ -16,4 +16,8 @@ public class Rekruter extends PracownikHR {
             rekrutacja.setRekruter(this);
         }
     }
+
+    public List<Rekrutacja> getRekrutacjas() {
+        return rekrutacjas;
+    }
 }

@@ -48,4 +48,28 @@ public class EtapRekrutacji {
         this.rekruterSpecjalista = rekruterSpecjalista;
         rekruterSpecjalista.addEtapRekrutacji(this);
     }
+
+    public boolean isCzyWymaganyRekruterSpecjalista() {
+        return czyWymaganyRekruterSpecjalista;
+    }
+
+    public String getNazwa() {
+        return nazwa;
+    }
+
+    public List<String> getTagi() {
+        return tagi;
+    }
+
+    public RekrutacjaMediator getRekrutacjaMediator() {
+        return rekrutacjaMediator;
+    }
+
+    public EtapRekrutacji getNastepny() {
+        return nastepny;
+    }
+
+    public RekruterSpecjalista getRekruterSpecjalista() {
+        return rekruterSpecjalista;
+    }
 }
