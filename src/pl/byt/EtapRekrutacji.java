@@ -12,6 +12,8 @@ public class EtapRekrutacji {
 
     private EtapRekrutacji nastepny;
 
+    private RekruterSpecjalista rekruterSpecjalista;
+
     private EtapRekrutacji(RekrutacjaMediator rekrutacjaMediator) {
         this.rekrutacjaMediator = rekrutacjaMediator;
     }
@@ -36,5 +38,14 @@ public class EtapRekrutacji {
         if (czyWymaganyRekruterSpecjalista) {
             tagi.add(tag);
         }
+    }
+
+    public void setRekruterSpecjalista(RekruterSpecjalista rekruterSpecjalista) {
+        if (this.rekruterSpecjalista != null && this.rekruterSpecjalista != rekruterSpecjalista) {
+            rekruterSpecjalista.removeEtapRekrutacji(this);
+        }
+
+        this.rekruterSpecjalista = rekruterSpecjalista;
+        rekruterSpecjalista.addEtapRekrutacji(this);
     }
 }
