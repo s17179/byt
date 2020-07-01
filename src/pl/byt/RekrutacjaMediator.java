@@ -1,7 +1,9 @@
 package pl.byt;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class RekrutacjaMediator {
     private List<Aplikacja> aplikacjas = new ArrayList<>();
@@ -9,6 +11,7 @@ public class RekrutacjaMediator {
     private List<Ocena> ocenas = new ArrayList<>();
 
     private List<EtapRekrutacji> etapRekrutacjis = new ArrayList<>();
+    private static Set<EtapRekrutacji> allEtapRekrutacjis = new HashSet<>();
 
     private Rekrutacja rekrutacja;
 
@@ -16,7 +19,7 @@ public class RekrutacjaMediator {
             Aplikacja initialAplikacja,
             EtapRekrutacji initialEtapRekrutacji,
             Rekrutacja rekrutacja
-    ) {
+    ) throws Exception {
         addAplikacja(initialAplikacja);
         addEtapRekrutacji(initialEtapRekrutacji);
         setRekrutacja(rekrutacja);
@@ -44,10 +47,14 @@ public class RekrutacjaMediator {
         ocenas.remove(ocena);
     }
 
-    public void addEtapRekrutacji(EtapRekrutacji etapRekrutacji) {
+    public void addEtapRekrutacji(EtapRekrutacji etapRekrutacji) throws Exception {
         if (!etapRekrutacjis.contains(etapRekrutacji)) {
+            if (allEtapRekrutacjis.contains(etapRekrutacji)) {
+                throw new Exception("Given etapRekrutacji is already connected with a RekrutacjaMediator");
+            }
+
             etapRekrutacjis.add(etapRekrutacji);
-            etapRekrutacji.setRekrutacjaMediator(this);
+            allEtapRekrutacjis.add(etapRekrutacji);
         }
     }
 

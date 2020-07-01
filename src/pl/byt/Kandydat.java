@@ -21,6 +21,10 @@ public class Kandydat {
             throw new Exception("Given CV is already connected with a Kandydat");
         }
 
+        if (this.cv != null) {
+            allCVs.remove(this.cv);
+        }
+
         this.cv = cv;
         allCVs.add(cv);
     }
