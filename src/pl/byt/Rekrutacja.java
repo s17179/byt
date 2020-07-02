@@ -43,7 +43,11 @@ public class Rekrutacja {
     }
 
     public void setRekruter(Rekruter rekruter) {
-        if (this.rekruter != null && this.rekruter != rekruter) {
+        if (this.rekruter == rekruter) {
+            return;
+        }
+
+        if (this.rekruter != null) {
             rekruter.removeRekrutacja(this);
         }
 

@@ -53,7 +53,11 @@ public class EtapRekrutacji {
     }
 
     public void setRekruterSpecjalista(RekruterSpecjalista rekruterSpecjalista) {
-        if (this.rekruterSpecjalista != null && this.rekruterSpecjalista != rekruterSpecjalista) {
+        if (this.rekruterSpecjalista == rekruterSpecjalista) {
+            return;
+        }
+
+        if (this.rekruterSpecjalista != null) {
             rekruterSpecjalista.removeEtapRekrutacji(this);
         }
 

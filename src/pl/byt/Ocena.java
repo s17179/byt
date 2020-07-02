@@ -17,7 +17,11 @@ public class Ocena {
     }
 
     public void setRekrutacjaMediator(RekrutacjaMediator rekrutacjaMediator) {
-        if (this.rekrutacjaMediator != null && this.rekrutacjaMediator != rekrutacjaMediator) {
+        if (this.rekrutacjaMediator == rekrutacjaMediator) {
+            return;
+        }
+
+        if (this.rekrutacjaMediator != null) {
             rekrutacjaMediator.removeOcena(this);
         }
 
