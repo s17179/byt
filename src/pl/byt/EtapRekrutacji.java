@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EtapRekrutacji {
-    private boolean czyWymaganyRekruterSpecjalista;
-    private String nazwa;
+    private final boolean czyWymaganyRekruterSpecjalista;
+    private final String nazwa;
     private List<String> tagi = new ArrayList<>();
 
     private RekrutacjaMediator rekrutacjaMediator;
