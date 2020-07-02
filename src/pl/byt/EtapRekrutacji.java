@@ -14,16 +14,28 @@ public class EtapRekrutacji {
 
     private RekruterSpecjalista rekruterSpecjalista;
 
-    private EtapRekrutacji(RekrutacjaMediator rekrutacjaMediator) {
+    private EtapRekrutacji(
+            RekrutacjaMediator rekrutacjaMediator,
+            boolean czyWymaganyRekruterSpecjalista,
+            String nazwa
+    ) {
         this.rekrutacjaMediator = rekrutacjaMediator;
+        this.czyWymaganyRekruterSpecjalista = czyWymaganyRekruterSpecjalista;
+        this.nazwa = nazwa;
     }
 
-    public static EtapRekrutacji createEtapRekrutacji(RekrutacjaMediator rekrutacjaMediator) throws Exception {
+    public static EtapRekrutacji createEtapRekrutacji(RekrutacjaMediator rekrutacjaMediator,
+                                                      boolean czyWymaganyRekruterSpecjalista,
+                                                      String nazwa) throws Exception {
         if (rekrutacjaMediator == null) {
             throw new Exception("Given rekrutacjaMediator cannot be null");
         }
 
-        EtapRekrutacji etapRekrutacji = new EtapRekrutacji(rekrutacjaMediator);
+        EtapRekrutacji etapRekrutacji = new EtapRekrutacji(
+                rekrutacjaMediator,
+                czyWymaganyRekruterSpecjalista,
+                nazwa
+        );
 
         rekrutacjaMediator.addEtapRekrutacji(etapRekrutacji);
 

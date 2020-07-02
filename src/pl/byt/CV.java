@@ -36,4 +36,12 @@ public class CV {
     public Kandydat getKandydat() {
         return kandydat;
     }
+
+    public void addToWyodrebnioneDane(String dane) {
+        wyodrebnioneDane.add(dane);
+    }
+
+    public void setZdjecie(String zdjecie) {
+        this.zdjecie = zdjecie;
+    }
 }

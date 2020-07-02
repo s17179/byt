@@ -6,8 +6,14 @@ public class Ocena {
 
     private RekrutacjaMediator rekrutacjaMediator;
 
-    public Ocena(RekrutacjaMediator rekrutacjaMediator) {
+    public Ocena(
+            RekrutacjaMediator rekrutacjaMediator,
+            String notatka,
+            int wartosc
+    ) {
         this.rekrutacjaMediator = rekrutacjaMediator;
+        this.notatka = notatka;
+        this.wartosc = wartosc;
     }
 
     public void setRekrutacjaMediator(RekrutacjaMediator rekrutacjaMediator) {

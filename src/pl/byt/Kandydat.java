@@ -14,7 +14,14 @@ public class Kandydat {
     private CV cv;
     public static Set<CV> allCVs = new HashSet<>();
 
-    private List<Aplikacja> aplikacjas = new ArrayList<>();
+    private List<Aplikacja> aplikacjaList = new ArrayList<>();
+
+    public Kandydat(String email, String imie, String nazwisko, String pesel) {
+        this.email = email;
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.pesel = pesel;
+    }
 
     public void setCV(CV cv) throws Exception {
         if (allCVs.contains(cv)) {
@@ -30,14 +37,14 @@ public class Kandydat {
     }
 
     public void addAplikacja(Aplikacja aplikacja) {
-        if (!aplikacjas.contains(aplikacja)) {
-            aplikacjas.add(aplikacja);
+        if (!aplikacjaList.contains(aplikacja)) {
+            aplikacjaList.add(aplikacja);
             aplikacja.setKandydat(this);
         }
     }
 
     public void removeAplikacja(Aplikacja aplikacja) {
-        aplikacjas.remove(aplikacja);
+        aplikacjaList.remove(aplikacja);
     }
 
     public static void usun() {
@@ -72,7 +79,7 @@ public class Kandydat {
         return cv;
     }
 
-    public List<Aplikacja> getAplikacjas() {
-        return aplikacjas;
+    public List<Aplikacja> getAplikacjaList() {
+        return aplikacjaList;
     }
 }

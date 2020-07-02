@@ -10,9 +10,18 @@ public class Aplikacja {
     private Kandydat kandydat;
     private RekrutacjaMediator rekrutacjaMediator;
 
-    public Aplikacja(Kandydat kandydat, RekrutacjaMediator rekrutacjaMediator) {
+    public Aplikacja(
+            Kandydat kandydat,
+            RekrutacjaMediator rekrutacjaMediator,
+            Date dataRozpoczecia,
+            Date dataZakonczenia,
+            String status
+    ) {
         setKandydat(kandydat);
         setRekrutacjaMediator(rekrutacjaMediator);
+        this.dataRozpoczecia = dataRozpoczecia;
+        this.dataZakonczenia = dataZakonczenia;
+        this.status = status;
     }
 
     public void setKandydat(Kandydat kandydat) {

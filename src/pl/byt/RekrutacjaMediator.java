@@ -6,15 +6,15 @@ import java.util.List;
 import java.util.Set;
 
 public class RekrutacjaMediator {
-    private List<Aplikacja> aplikacjas = new ArrayList<>();
+    private List<Aplikacja> aplikacjaList = new ArrayList<>();
 
-    private List<Ocena> ocenas = new ArrayList<>();
+    private List<Ocena> ocenaList = new ArrayList<>();
 
-    private List<EtapRekrutacji> etapRekrutacjis = new ArrayList<>();
-    public static Set<EtapRekrutacji> allEtapRekrutacjis = new HashSet<>();
+    private List<EtapRekrutacji> etapRekrutacjiList = new ArrayList<>();
+    public static Set<EtapRekrutacji> allEtapRekrutacjiSet = new HashSet<>();
 
     private Rekrutacja rekrutacja;
-    public static Set<Rekrutacja> allRekrutacjas = new HashSet<>();
+    public static Set<Rekrutacja> allRekrutacjaList = new HashSet<>();
 
     public RekrutacjaMediator(
             Aplikacja initialAplikacja,
@@ -27,49 +27,49 @@ public class RekrutacjaMediator {
     }
 
     public void addAplikacja(Aplikacja aplikacja) {
-        if (!aplikacjas.contains(aplikacja)) {
-            aplikacjas.add(aplikacja);
+        if (!aplikacjaList.contains(aplikacja)) {
+            aplikacjaList.add(aplikacja);
             aplikacja.setRekrutacjaMediator(this);
         }
     }
 
     public void removeAplikacja(Aplikacja aplikacja) {
-        aplikacjas.remove(aplikacja);
+        aplikacjaList.remove(aplikacja);
     }
 
     public void addOcena(Ocena ocena) {
-        if (!ocenas.contains(ocena)) {
-            ocenas.add(ocena);
+        if (!ocenaList.contains(ocena)) {
+            ocenaList.add(ocena);
             ocena.setRekrutacjaMediator(this);
         }
     }
 
     public void removeOcena(Ocena ocena) {
-        ocenas.remove(ocena);
+        ocenaList.remove(ocena);
     }
 
     public void addEtapRekrutacji(EtapRekrutacji etapRekrutacji) throws Exception {
-        if (!etapRekrutacjis.contains(etapRekrutacji)) {
-            if (allEtapRekrutacjis.contains(etapRekrutacji)) {
+        if (!etapRekrutacjiList.contains(etapRekrutacji)) {
+            if (allEtapRekrutacjiSet.contains(etapRekrutacji)) {
                 throw new Exception("Given etapRekrutacji is already connected with a RekrutacjaMediator");
             }
 
-            etapRekrutacjis.add(etapRekrutacji);
-            allEtapRekrutacjis.add(etapRekrutacji);
+            etapRekrutacjiList.add(etapRekrutacji);
+            allEtapRekrutacjiSet.add(etapRekrutacji);
         }
     }
 
     public void setRekrutacja(Rekrutacja rekrutacja) throws Exception {
-        if (allRekrutacjas.contains(rekrutacja)) {
+        if (allRekrutacjaList.contains(rekrutacja)) {
             throw new Exception("Given rekrutacja is already connected with a RekrutacjaMediator");
         }
 
         if (this.rekrutacja != null) {
-            allRekrutacjas.remove(this.rekrutacja);
+            allRekrutacjaList.remove(this.rekrutacja);
         }
 
         this.rekrutacja = rekrutacja;
-        allRekrutacjas.add(rekrutacja);
+        allRekrutacjaList.add(rekrutacja);
     }
 
     public void akceptujKandydata() {
@@ -104,16 +104,16 @@ public class RekrutacjaMediator {
 
     }
 
-    public List<Aplikacja> getAplikacjas() {
-        return aplikacjas;
+    public List<Aplikacja> getAplikacjaList() {
+        return aplikacjaList;
     }
 
-    public List<Ocena> getOcenas() {
-        return ocenas;
+    public List<Ocena> getOcenaList() {
+        return ocenaList;
     }
 
-    public List<EtapRekrutacji> getEtapRekrutacjis() {
-        return etapRekrutacjis;
+    public List<EtapRekrutacji> getEtapRekrutacjiList() {
+        return etapRekrutacjiList;
     }
 
     public Rekrutacja getRekrutacja() {

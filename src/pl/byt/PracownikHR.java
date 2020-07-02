@@ -1,6 +1,6 @@
 package pl.byt;
 
-public class PracownikHR {
+public abstract class PracownikHR {
     protected String haslo;
     protected String login;
 
