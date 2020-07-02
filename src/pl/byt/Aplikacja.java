@@ -25,8 +25,8 @@ public class Aplikacja {
     }
 
     public void setKandydat(Kandydat kandydat) {
-        if (this.kandydat != null && this.kandydat != kandydat) {
-            kandydat.removeAplikacja(this);
+        if (this.kandydat != null) {
+            return;
         }
 
         this.kandydat = kandydat;
@@ -34,8 +34,8 @@ public class Aplikacja {
     }
 
     public void setRekrutacjaMediator(RekrutacjaMediator rekrutacjaMediator) {
-        if (this.rekrutacjaMediator != null && this.rekrutacjaMediator != rekrutacjaMediator) {
-            rekrutacjaMediator.removeAplikacja(this);
+        if (this.rekrutacjaMediator != null) {
+            return;
         }
 
         this.rekrutacjaMediator = rekrutacjaMediator;
